@@ -1,0 +1,71 @@
+{% extends 'Tweet/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<body class=" login"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container" style="margin:0 auto;width:500px;">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="/register/">SignUp</a></h1>
+
+        </div>
+        
+        
+    </div>
+    <!-- END Header -->
+    
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        
+        
+
+
+
+
+<div id="content-main">
+
+
+
+<form method="POST" enctype="multipart/formdata" style="display:grid">
+	{% csrf_token %}
+	{{ u_form|crispy }}
+	{{ p_form|crispy }}
+  
+  
+  <div class="submit-row">
+    <label>&nbsp;</label><input type="submit" value="SignUp" />
+  </div>
+</form>
+<div class="submit-row">
+    <label>already have an account</label>
+    <a href="{% url 'login' %}">login</a>
+  </div>
+
+</div>
+
+        
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer">please select  a good username</div>
+</div>
+<!-- END Container -->
+
+</body>
+{% endblock %}
