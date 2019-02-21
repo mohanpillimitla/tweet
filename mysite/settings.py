@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #SECRET_KEY = '^p1bheft^%fj$^s#g9uv$m7!km0jtg2nu=0kp9j%2t6xe!nk-h'
 SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =os.environ['DEBUG_VALUE']
+DEBUG =(os.environ['DEBUG_VALUE']=='True')
 
 ALLOWED_HOSTS = ['cynosure2k19.herokuapp.com']
 
