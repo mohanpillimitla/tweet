@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^p1bheft^%fj$^s#g9uv$m7!km0jtg2nu=0kp9j%2t6xe!nk-h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cynosure2k19.herokuapp.com']
 
 
 # Application definition
@@ -150,7 +150,7 @@ EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
-EMAIL_HOST_USER='mohanpillimitla143@gmail.com'
-EMAIL_HOST_PASSWORD='nqlyckzwnazzhpfm'
+EMAIL_HOST_USER=os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD=os.environ['EMAIL_HOST_PASSWORD']
 
 
