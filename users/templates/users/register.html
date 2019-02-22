@@ -42,10 +42,18 @@
 
 
 <form method="POST" enctype="multipart/formdata" style="display:grid">
-	{% csrf_token %}
-	{{ u_form|crispy }}
-	{{ p_form|crispy }}
+	      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4"></legend>
+              {{ p_form|crispy }}
+
+             {{ u_form|crispy }}
   
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
   <div class="submit-row">
     <label>&nbsp;</label><input type="submit" value="SignUp" />
   </div>
