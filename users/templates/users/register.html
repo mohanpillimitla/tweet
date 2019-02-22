@@ -45,12 +45,13 @@
 	      <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
-              <legend class="border-bottom mb-4"></legend>
+              <legend class="border-bottom mb-4">
               {{ p_form|crispy }}
 
              {{ u_form|crispy }}
   
           </fieldset>
+      </legend>
           <div class="form-group">
               <button class="btn btn-outline-info" type="submit">Update</button>
           </div>
