@@ -43,10 +43,9 @@
 
 <form method="POST">
   <fieldset class="form-group">
-    <legend class="border-bottom mb-6">
+    <legend class="border-bottom mb-6"></legend>
 	{% csrf_token %}
 	{{ form|crispy }}
-</legend>
 </fieldset>
   
   
