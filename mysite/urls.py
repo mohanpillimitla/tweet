@@ -19,12 +19,13 @@ from users.views import register,profile,activate
 from django.contrib.auth.views import LoginView,LogoutView,PasswordResetView,PasswordResetDoneView,PasswordResetConfirmView,PasswordResetCompleteView
 from django.conf import settings
 from django.conf.urls.static import static
+from Tweet.views import contactView,home
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('Tweet.urls')),
+    path('',home,name="home"),
     path('register/',register,name='register'),
     path('login/',LoginView.as_view(template_name='users/login.html'),name='login'),
     path('logout/',LogoutView.as_view(template_name='users/logout.html'),name='logout'),
@@ -34,8 +35,7 @@ urlpatterns = [
     path('password_reset_complete/',PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),name='password_reset_complete'),
     path('activate/<uidb64>/<token>/',activate,name='activate'),
     path('profile/',profile,name='profile'),
-
- 
+    path('contact/',contactView,name='contact')
 ]
 
 if settings.DEBUG:

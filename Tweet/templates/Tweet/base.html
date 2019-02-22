@@ -8,21 +8,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel='stylesheet' type="text/css" href="{% static 'Tweet/main.css' %}">
 
-</head>
-<body>
 
-<nav class="navbar navbar-inverse">
+</head>
+
+<nav class= "navbar navbar   nav_opas" style="background:black;" role=""navigation">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class= "navbar-header">
+       
       <a class="navbar-brand" href="#">CYNOSURE</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="tweet/">tweet</a></li>
-            <li><a href="#">events</a></li>
+  <div>
 
-    </ul>
-    <ul class="nav navbar-nav navbar-right"> 
+    <ul class="nav navbar-nav navbar-right nav-cent">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'contact' %}">events</a></li>
+            <li><a href="#">sponsors</a></li>
+
+  
       {% if user.is_authenticated %}
       
       <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-off"></span> logout</a></li>
@@ -57,6 +59,8 @@
     
     </div>
 </main>
+<!-- Footer -->
+
 
 
 
@@ -66,6 +70,13 @@
   
 
 </body>
+
+
+
+
+
+
+
 </html>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCk  Rr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
