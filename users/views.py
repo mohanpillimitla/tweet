@@ -111,4 +111,4 @@ def activate(request, uidb64, token):
         login(request, user)
         return redirect('home')
     else:
-        return HttpResponse('invalid link')
+        return render(request,account_activation_invalid.html,{})
