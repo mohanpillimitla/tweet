@@ -1,19 +1,24 @@
 {% extends 'Tweet/base.html' %}
 {% load crispy_forms_tags %}
+<style>
+.content {
+  height: 190vh;
+}
+@media only screen(max-width:768px)
+{
+	.content
+	{
+	height:100vh;
+}
+}
+
+</style>
 {% block content %}
 <style>
 .content {
   height: 190vh;
 }
-@media only screen (max-width:768px)
-{
- .content
- {
- 	height:100vh;
- 	width:;
- }
 
-}
 </style>
 
 <div class="content-section">
@@ -27,8 +32,9 @@
               {{ u_form|crispy }}
               {{ p_form|crispy }}
           </div>
+                        <button class="btn btn-outline-info" type="submit">register</button>
+
           </fieldset>
-              <button class="btn btn-outline-info" type="submit">register</button>
       </form>
       <p> already have an account <a href="{% url 'login' %}">login</a>
           </p>
