@@ -137,14 +137,14 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-@media only screen and (min-width:400px) {
+@media only screen and (min-width:1000px) {
   .nav-toggle-label {
     display: none;
   }
 
   header {
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 0.2fr;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 0.1fr;
   }
   
   .logo {
@@ -228,7 +228,7 @@ header h3
         <nav class="nav-bar">
              <ul class="nav-menu">
                  <li class="nav-item"><a href="{% url 'home' %}">home</a></li>
-                <li class="nav-item"><a href="#">contact us</a></li>
+                <li class="nav-item"><a href="#">contact</a></li>
 
                  <li class="nav-item"><a href="#">events</a></li>                 
                  <li class="nav-item"><a href="#">sponsors</a></li>
