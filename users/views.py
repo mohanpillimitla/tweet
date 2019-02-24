@@ -47,7 +47,7 @@ def register(request):
 
 
 		 
-		    return HttpResponse('account_activation_sent')
+		    return render(request,'account_activation_sent.html',{'user':user})
 
 
 	else:

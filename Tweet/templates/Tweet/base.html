@@ -117,6 +117,7 @@ nav a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight:bold;
   text-transform: uppercase;
   opacity: 0;
   transition: opacity 150ms ease-in-out;
@@ -143,7 +144,7 @@ nav a:hover {
 
   header {
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 0.2fr;
   }
   
   .logo {
@@ -203,6 +204,7 @@ nav a:hover {
 header h3
 {
  color:white;
+ font-weight:bold;
 }
 
 
@@ -234,7 +236,7 @@ header h3
 <li class="nav-item"><a href="/profile/"><span class="glyphicon glyphicon-user"></span>profile</a></li>
       {% else %}
 <li class="nav-item"><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                 <li class="nav-item"><a href="/register/"><span class="glyphicon glyphicon-user">register</a></li>
+                 <li class="nav-item"><a href="/register/"><span class="glyphicon glyphicon-user"></span>register</a></li>
                </ul>
        {% endif %}
          </nav>
