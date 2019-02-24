@@ -1,16 +1,7 @@
 {% extends 'Tweet/base.html' %}
 {% load crispy_forms_tags %}
-<style>
-.content {
-  height: 190vh;
-}
 
-</style>
 {% block content %}
-<style>
-.content {
-  height: 190vh;
-}
 
 </style>
 
@@ -19,7 +10,7 @@
           {% csrf_token %}
           <fieldset class="form-group">
 
-              <legend class="border-bottom mb-4">signup</legend>
+              <legend class= "border-bottom mb-4" style="color:white;">signup</legend>
                         <div>
 
               {{ u_form|crispy }}

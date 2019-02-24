@@ -36,4 +36,3 @@ class ProfileUpdateForm(forms.ModelForm):
 	  	fields=['firstname','lastname','branch','year_of_study','collegename','college_location','mobileno']
 
 
-

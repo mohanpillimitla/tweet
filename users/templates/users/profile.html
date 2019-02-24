@@ -5,23 +5,22 @@
 .content {
   height: 150vh;
 }
-@media only screen (max-width:768px)
-{
- .content
- {
-  height:100vh;
- }
 
+h3,p
+{
+  color:white;
 }
 </style>
+<div>
           <h3 class="account-heading">username:{{ user.username }}</h3>
           <p class="text-secondary">email:{{ user.email }}</p>
+        </div>
       <div class="content-section">
       <form method="POST" enctype="multipart/form-data" style="text-color:black" >
           {% csrf_token %}
           <fieldset class="form-group">
 
-              <legend class="border-bottom mb-4">profile info</legend>
+              <legend class="border-bottom mb-4"style="color:white;">profile info</legend>
                         <div>
 
               {{ p_form|crispy }}
