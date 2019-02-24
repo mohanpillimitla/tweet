@@ -1,15 +1,18 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en"
 <meta charset='UTF-8">
 <meta name="view-port" width="device-width,initial-scale='">
 <head><title>cynosure</title>
+  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background:black;
+  --background: rgba(0, 214, 170, .85);
 }
 
 *, *::before, *::after {
@@ -18,22 +21,19 @@
 
 body {
   margin: 0;
+  background: #222;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  height: 200vh;
-  background-image: url(//unsplash.it/1000/1000);
-  background-color: #333;
-  background-blend-mode: multiply;
-  background-size: cover;
-  font-color:white;
+    background-image: url(//unsplash.it/1000/1000);
+    background-blend-mode:multiply;
+    background-size:cover;
 }
-
-.content {
+.content
+{
   display:grid;
-    place-items:center;
-
-  
+  place-items:center;
 }
+
 
 /* navigation styles start here */
 
@@ -43,202 +43,113 @@ header {
   position: fixed;
   z-index: 999;
   width: 100%;
-  margin-bottom:2px;
 }
-
-/* changed this from the tutorial video to
-   allow it to gain focus, making it tabbable */
-.nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+.navbar
+{
+background-color:black;
+display:flex;
+padding:16px;
+font-family:sans-serif;
+color:blue;
 }
+  
 
-.nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(0, .75);
+
+.navbar__link-brand
+{
+flex:1;
+display:flex;
+align-items:center;
+font-size:25px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+
 }
-
-.nav-toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: 1em;
-  height: 100%;
-  display: flex;
-  align-items: center;
+.navbar__items
+{
+  align-self:flex-end;
+  flex:3;
+ display:flex;
+ align-items:center;
+ font-size:1.5rem;
+ cursor:pointer;
 }
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  display: block;
-  background: white;
-  height: 2px;
-  width: 2em;
-  border-radius: 2px;
-  position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  content: '';
-  position: absolute;
-}
-
-.nav-toggle-label span::before {
-  bottom: 7px;
-}
-
-.nav-toggle-label span::after {
-  top: 7px;
-}
-
-nav {
-  position: absolute;
-  text-align: left;
-  top: 100%;
-  left: 0;
-  background: var(--background);
-  width: 100%;
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 400ms ease-in-out;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.navbar__link
+{
+  flex:1;
   display:grid;
   place-items:center;
+  padding:8px;
 }
 
-nav li {
-  margin-bottom: 1em;
-  margin-left: 1em;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 3rem;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 150ms ease-in-out;
-}
-
-nav a:hover {
-  color:blue;
-  text-decoration:none;
-}
-
-.nav-toggle:checked ~ nav {
-  transform: scale(1,1);
-}
-
-.nav-toggle:checked ~ nav a {
-  opacity: 1;
-  transition: opacity 250ms ease-in-out 250ms;
-}
-
-@media only screen and (min-width:1000px) {
-  .content {
-  height: 200vh;
-}
-  .nav-toggle-label {
-    display: none;
-  }
-
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 0.1fr;
-  }
-  
-  .logo {
-    grid-column: 2 / 3;
-  }
-  
-  nav {
-    // all: unset; /* this causes issues with Edge, since it's unsupported */
-    
-    /* the following lines are not from my video, but add Edge support */
-    position: relative;
-    text-align: left;
-    transition: none;
-    transform: scale(1,1);
-    background: none;
-    top: initial;
-    left: initial;
-    /* end Edge support stuff */
-    
-    grid-column: 3 / 4;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-  }
-  
-  nav li {
-    margin-left: 3em;
-    margin-bottom: 0;
-  }
-  
-  nav a {
-    opacity: 1;
-    position: relative;
-    font-size:1.5rem;
-  }
-  
-  nav a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    background:blue;;
-    position: absolute;
-    top: -.75em;
-    left: 0;
-    right: 0;
-    transform: scale(0, 1);
-    transition: transform ease-in-out 250ms;
-  }
-  
-  nav a:hover::before {
-    transform: scale(1,1);
-  }
-}
-header h3
+.navbar__link-toggle
 {
- color:white;
- font-weight:bold;
- font-size:3rem;
-}
-td,tr,label
-{
-  color:white;
-  font-weight:bold;
-  font-size:1.6rem;
-}
-.form-text
-{
-  color:white;
-}
-span
-{
+  flex:1;
   display:none;
 }
-p
+
+
+@media only screen and (max-width: 800px){
+  .navbar__link-brand
+  {
+
+    margin-right:auto;
+  }
+.navbar__items,
+.navbar
 {
-  color:white;
+  flex-direction:column;
+  align-items:stretch;
+  align-self:center;
 }
-form
+.navbar__items
 {
-  margin-top:0;
-  top:0;
+ display:none;
+}
+.navbar__items--right
+{
+
+margin-left:0;
+}
+.navbar__link-toggle
+{
+display:flex;
+align-items:center;
 }
 
+
+.navbar__toggleshow
+{
+display:grid;
+place-items:center;
+grid-row-gap:2em;
+
+}
+.navbar__link-toggle
+{
+
+  align-self:flex-end;
+  position:absolute;
+  display:initial;
+  cursor:pointer;
+  top:20px;
+
+
+}
+
+}
+.navbar__link a
+{
+  color:grey;
+  font-weight:bold;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.navbar__link a:hover
+{
+  color:blue;
+}
 
 
 
@@ -248,41 +159,28 @@ form
 
 
 
-
-
-</head>
- 
-
-
 <body>
-     <header><h3>CYNOSURE</h3>
-          <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <nav class="nav-bar">
-             <ul class="nav-menu">
-                 <li class="nav-item"><a href="{% url 'home' %}">home</a></li>
-                <li class="nav-item"><a href="#">contact</a></li>
+    <div class="navbar">
+     <div class="navbar__link-brand">CYNOSURE 2k18</div>
+     <div class="navbar__link-toggle">
+         <i class="fas fa-bars"></i>
+</div>
+        <div class="navbar__items">
+           
+           <div class="navbar__link"><a href="{% url 'home' %}">home</a></div>
+           <div class="navbar__link"><a href="#">events</a></div>
+          <div class="navbar__link"><a href="{% url 'contact' %}">contact</a></div>
+          {% if user.is_authenticated %}
+           <div class="navbar__link"><a href="{% url 'profile' %}"><span class="glyphicon glyphicon-user"></span>profile</a></div>
+           <div class="navbar__link"><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-user"></span>logout</a></div>
+           {% else %}
+           <div class="navbar__link"><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span>register</a></div>
+           <div class="navbar__link"><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> login</a></div>
+           {% endif %}
 
-                 <li class="nav-item"><a href="#">events</a></li>                 
-                 <li class="nav-item"><a href="#">sponsors</a></li>
-              </ul>
-              <ul class="nav-menu nav-menu-left">
-      {% if user.is_authenticated %}
-                 <li class="nav-item" ><a href="/logout/"><span class="glyphicon glyphicon-off"></span>logout</a></li>
-<li class="nav-item"><a href="/profile/"><span class="glyphicon glyphicon-user"></span>profile</a></li>
-      {% else %}
-<li class="nav-item"><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                 <li class="nav-item"><a href="/register/"><span class="glyphicon glyphicon-user"></span>register</a></li>
-               </ul>
-       {% endif %}
-         </nav>
-  <label for="nav-toggle" class="nav-toggle-label">
-   <span></span>
-</label>
-</header>
-
-
-
-    <div class="content" >
+        </div>
+</div> 
+<div class="content" >
     <div class="col-md-5">
       {% if messages %}
       {% for message in messages %}
@@ -295,7 +193,7 @@ form
     </div>
     
     </div>
-      
+  </body>
 
 
 
@@ -303,16 +201,19 @@ form
 
 
 
-</body>
 
-<footer></footer>
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCk  Rr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
 </html>
+<script>
+function add_remove_toggle()
+{
+ const value=document.querySelectorAll('.navbar__items')
+ value.forEach(nav => 
+  nav.classList.toggle('navbar__toggleshow'));
+}
+document.querySelector('.navbar__link-toggle').addEventListener('click',add_remove_toggle);
 
 
-          
-        
-          
-
+</script>
