@@ -1,16 +1,7 @@
 {% extends "Tweet/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<style>
-.content {
-  height: 150vh;
-}
 
-h3,p
-{
-  color:white;
-}
-</style>
 <div>
           <h3 class="account-heading">username:{{ user.username }}</h3>
           <p class="text-secondary">email:{{ user.email }}</p>
@@ -20,7 +11,7 @@ h3,p
           {% csrf_token %}
           <fieldset class="form-group">
 
-              <legend class="border-bottom mb-4"style="color:white;">profile info</legend>
+              <legend class="border-bottom mb-6"style="color:white;">profile info</legend>
                         <div>
 
               {{ p_form|crispy }}
