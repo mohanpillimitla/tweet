@@ -1,6 +1,13 @@
 {% extends "Tweet/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<style>
+.form-text
+{
+  flex:1;
+}
+
+</style>
 
 <div>
           <h3 class="account-heading">username:{{ user.username }}</h3>
@@ -15,6 +22,11 @@
                         <div>
 
               {{ p_form|crispy }}
+              <div class="eventlist" style="display:flex;">
+              {{ e_form|crispy }}
+            </div>
+            <p> check the events u are intrested in</p>
+
           </div>
           </fieldset>
               <button class="btn btn-outline-info" type="submit">update</button>

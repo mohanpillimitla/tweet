@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .forms import UserRegistrationForm,ProfileUpdateForm
+from .forms import UserRegistrationForm,ProfileUpdateForm,EventUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes,force_text
@@ -82,16 +82,19 @@ def register(request):
 def profile(request):
 	if request.method=='POST':
 	   p_form = ProfileUpdateForm(request.POST or None,instance=request.user.profile)
+	   e_form =EventUpdateForm(request.POST or None,instance=request.user.profile)
 	   if p_form.is_valid():
 	   	  p_form.save()
+	   	  e_form.save()
 	   	  username=request.user.username
 	   	  messages.success(request,f'{username} profile has been updated successfully')
 	   	  return redirect('profile')
 	else:
 	   p_form=ProfileUpdateForm(instance=request.user.profile)
+	   e_form=EventUpdateForm(instance=request.user.profile)
 
 
-	return render(request,'users/profile.html',{'p_form':p_form})
+	return render(request,'users/profile.html',{'p_form':p_form,'e_form':e_form})
 
 
 

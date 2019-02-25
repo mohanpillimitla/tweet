@@ -12,6 +12,19 @@ class Profile(models.Model):
 	  college_location=models.CharField(max_length=20)
 	  mobileno=models.CharField(max_length=10,help_text='enter your mobile number')
 	  email_verified=models.BooleanField(default=False)
+	  event1=models.BooleanField(default=False)
+	  event2=models.BooleanField(default=False)
+	  event3=models.BooleanField(default=False)
+	  event4=models.BooleanField(default=False)
+	  event5=models.BooleanField(default=False)
+	  event6=models.BooleanField(default=False)
+	  event7=models.BooleanField(default=False)
+	  event8=models.BooleanField(default=False)
+	  event9=models.BooleanField(default=False)
+	  event10=models.BooleanField(default=False)
+
+	  
+
 	  def __str__(self):
 	  	  return f'{self.user.username} profile'
 

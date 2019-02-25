@@ -36,3 +36,9 @@ class ProfileUpdateForm(forms.ModelForm):
 	  	fields=['firstname','lastname','branch','year_of_study','collegename','college_location','mobileno']
 
 
+class EventUpdateForm(forms.ModelForm):
+	  class Meta:
+	      model=Profile
+	      fields=['event1',"event2","event3","event4","event5","event6","event7","event8","event9","event10"]
+
+
