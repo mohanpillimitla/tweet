@@ -33,7 +33,7 @@ class UserRegistrationForm(UserCreationForm):
 class ProfileUpdateForm(forms.ModelForm):
 	  class Meta:
 	  	model=Profile
-	  	fields=['firstname','lastname','branch','year_of_study','collegename','college_location','mobileno']
+	  	fields=['firstname','lastname','branch','year_of_study','collegename','college_location','mobile_number']
 
 
 class EventUpdateForm(forms.ModelForm):

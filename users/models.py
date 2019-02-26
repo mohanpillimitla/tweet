@@ -10,7 +10,7 @@ class Profile(models.Model):
 	  year_of_study=models.CharField(max_length=1)
 	  collegename=models.CharField(max_length=40)
 	  college_location=models.CharField(max_length=20)
-	  mobileno=models.CharField(max_length=10,help_text='enter your mobile number')
+	  mobile_number=models.CharField(max_length=10,help_text='enter your mobile number')
 	  email_verified=models.BooleanField(default=False)
 	  event1=models.BooleanField(default=False)
 	  event2=models.BooleanField(default=False)
