@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .forms import UserRegistrationForm,ProfileUpdateForm,EventUpdateForm
+from .forms import UserRegistrationForm,ProfileUpdateForm,EventUpdateForm,UserEventForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes,force_text
@@ -83,18 +83,21 @@ def profile(request):
 	if request.method=='POST':
 	   p_form = ProfileUpdateForm(request.POST or None,instance=request.user.profile)
 	   e_form =EventUpdateForm(request.POST or None,instance=request.user.profile)
-	   if p_form.is_valid():
+	   u_form=UserEventForm(request.POST or None,instance=request.user.profile)
+	   if p_form.is_valid() :
 	   	  p_form.save()
 	   	  e_form.save()
+	   	  u_form.save()
 	   	  username=request.user.username
 	   	  messages.success(request,f'{username} profile has been updated successfully')
 	   	  return redirect('profile')
 	else:
 	   p_form=ProfileUpdateForm(instance=request.user.profile)
 	   e_form=EventUpdateForm(instance=request.user.profile)
+	   u_form=UserEventForm(instance=request.user.profile)
 
 
-	return render(request,'users/profile.html',{'p_form':p_form,'e_form':e_form})
+	return render(request,'users/profile.html',{'p_form':p_form,'e_form':e_form,'u_form':u_form})
 
 
 
@@ -112,6 +115,7 @@ def activate(request, uidb64, token):
         user.save()
         user.profile.save()
         login(request, user)
-        return redirect('home')
+        return redirect('profile')
+        messages.success(request,f'plesae fill your details')
     else:
         return render(request,'account_activation_invalid.html',{})
