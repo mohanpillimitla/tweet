@@ -21,13 +21,8 @@ class Profile(models.Model):
 	  event7=models.BooleanField(default=False)
 	  event8=models.BooleanField(default=False)
 	  event9=models.BooleanField(default=False)
-	  event10=models.BooleanField(default=False)
 
 	  
 
 	  def __str__(self):
 	  	  return f'{self.user.username} profile'
-
-
-
-	  

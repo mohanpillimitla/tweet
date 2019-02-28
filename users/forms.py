@@ -44,4 +44,4 @@ class EventUpdateForm(forms.ModelForm):
 class UserEventForm(forms.ModelForm):
 	class Meta:
 		model=Profile
-		fields=['event1',"event2","event3","event4","event5","event6","event7","event8","event9","event10"]
+		fields=['event1',"event2","event3","event4","event5","event6","event7","event8","event9"]
