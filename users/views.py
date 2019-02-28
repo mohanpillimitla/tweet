@@ -84,7 +84,7 @@ def profile(request):
 	   p_form = ProfileUpdateForm(request.POST or None,instance=request.user.profile)
 	   e_form =EventUpdateForm(request.POST or None,instance=request.user.profile)
 	   u_form=UserEventForm(request.POST or None,instance=request.user.profile)
-	   if p_form.is_valid() :
+	   if p_form.is_valid() and e_form.is_valid() and u_form.is_valid() :
 	   	  p_form.save()
 	   	  e_form.save()
 	   	  u_form.save()
@@ -115,7 +115,7 @@ def activate(request, uidb64, token):
         user.save()
         user.profile.save()
         login(request, user)
+
         return redirect('profile')
-        messages.success(request,f'plesae fill your details')
     else:
         return render(request,'account_activation_invalid.html',{})

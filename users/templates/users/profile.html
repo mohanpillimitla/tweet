@@ -15,11 +15,13 @@
 
               <legend class="border-bottom mb-6"style="color:white;">profile info</legend>
                         <div>
+              
 
               {{ e_form|crispy }}
-              <div class="eventlist" style="display:flex;">
-              {{ u_form|crispy }}
-            </div>
+              {{ p_form|crispy }}
+              <div style="display:grid;grid-template-columns:auto auto auto">
+               {{ u_form|crispy }}
+             </div>
             <p> check the events u are intrested in</p>
 
           </div>
