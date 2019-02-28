@@ -138,6 +138,8 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 MEDIA_URL  ='/media/'
 
+SECURE_SSL_REDIRECT=(os.environ['SECURE_SSL_REDIRECT']=='True')
+
 
 
 
