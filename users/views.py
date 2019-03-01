@@ -115,6 +115,7 @@ def activate(request, uidb64, token):
         user.save()
         user.profile.save()
         login(request, user)
+        messages.success(request,f'please update your details')
 
         return redirect('profile')
     else:

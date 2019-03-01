@@ -27,9 +27,10 @@ body {
   background: #333;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-    background-image: url(//unsplash.it/1000/1000);
+    /*background-image: url(//unsplash.it/1000/1000);
     background-blend-mode:multiply;
     background-size:cover;
+    */
 }
 .content
 {
@@ -180,7 +181,6 @@ label
 
 
 
-
 }
 .navbar__link a
 {
@@ -197,6 +197,14 @@ label
 {
   flex-wrap:wrap;
   
+}
+.invalid-feedback
+{
+  color:red;
+}
+#id_mobile_number
+{
+
 }
 
 
@@ -255,6 +263,3 @@ function add_remove_toggle()
   nav.classList.toggle('navbar__toggleshow'));
 }
 document.querySelector('.navbar__link-toggle').addEventListener('click',add_remove_toggle);
-
-
-</script>

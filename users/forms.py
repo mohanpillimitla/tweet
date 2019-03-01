@@ -5,6 +5,12 @@ from .models import Profile
 from django.core.exceptions import ValidationError
 
 
+colleges=['svuniversity','svcet',]
+year=[1,2,3,4]
+cities=['tirupathi','nellore','kadapa','ananthapur','others']
+branches=['CSE','ECE','EEE','MECHANICAL','CIVIL','IT','OTHERS']
+
+
 class UserRegistrationForm(UserCreationForm):
 	  email=forms.EmailField(label='email', required=True)
 
@@ -37,9 +43,16 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class EventUpdateForm(forms.ModelForm):
+
+	  college_name=forms.ChoiceField(choices=[(x,x) for x in colleges])
+	  year_of_study=forms.ChoiceField(choices=[(x,x) for x in year])
+	  college_location=forms.ChoiceField(choices=[(x,x) for x in cities])
+	  branch=forms.ChoiceField(choices=[(x,x) for x in branches])
+
+
 	  class Meta:
 	      model=Profile
-	      fields=['firstname','lastname','branch','year_of_study','collegename','college_location']
+	      fields=['firstname','lastname','branch','year_of_study','college_name','college_location']
 
 class UserEventForm(forms.ModelForm):
 	class Meta:
