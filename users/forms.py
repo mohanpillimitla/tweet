@@ -5,9 +5,7 @@ from .models import Profile
 from django.core.exceptions import ValidationError
 
 
-colleges=['svuniversity','svcet',]
 year=[1,2,3,4]
-cities=['tirupathi','nellore','kadapa','ananthapur','others']
 branches=['CSE','ECE','EEE','MECHANICAL','CIVIL','IT','OTHERS']
 
 
@@ -44,9 +42,7 @@ class ProfileUpdateForm(forms.ModelForm):
 
 class EventUpdateForm(forms.ModelForm):
 
-	  college_name=forms.ChoiceField(choices=[(x,x) for x in colleges])
 	  year_of_study=forms.ChoiceField(choices=[(x,x) for x in year])
-	  college_location=forms.ChoiceField(choices=[(x,x) for x in cities])
 	  branch=forms.ChoiceField(choices=[(x,x) for x in branches])
 
 
