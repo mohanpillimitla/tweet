@@ -24,7 +24,7 @@ from Tweet.views import contactView,home
 
 
 urlpatterns = [
-    path('cse2k16@31/', admin.site.urls),
+    path('cse2k16@31', admin.site.urls),
     path('',home,name="home"),
     path('register/',register,name='register'),
     path('login/',LoginView.as_view(template_name='users/login.html'),name='login'),
