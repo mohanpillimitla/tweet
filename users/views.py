@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .forms import UserRegistrationForm,ProfileUpdateForm,EventUpdateForm,UserEventForm
+from .forms import UserRegistrationForm,EventUpdateForm,UserEventForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes,force_text
