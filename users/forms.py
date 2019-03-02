@@ -34,10 +34,10 @@ class UserRegistrationForm(UserCreationForm):
 
 
 
-# class ProfileUpdateForm(forms.ModelForm):
-# 	  class Meta:
-# 	  	model=Profile
-# 	  	fields=['mobile_number']
+class ProfileUpdateForm(forms.ModelForm):
+	  class Meta:
+	  	model=Profile
+	  	fields=['mobile_number']
 
 
 class EventUpdateForm(forms.ModelForm):
