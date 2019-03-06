@@ -27,10 +27,13 @@ body {
   background: #333;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-    /*background-image: url(//unsplash.it/1000/1000);
-    background-blend-mode:multiply;
-    background-size:cover;
-    */
+  {% load static %}
+  background-image:url({% static 'users/images/download.jpeg' %});
+  background-blend-mode:multiply;
+  background-size:cover;
+        <img src="{% static 'users/images/download.jpeg' %}" >
+
+    
 }
 .content
 {
