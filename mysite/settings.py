@@ -134,7 +134,6 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 STATIC_URL = '/static/'
 
-MEDIA_URL='/media/'
 
 
 SECURE_SSL_REDIRECT=(os.environ['SECURE_SSL_REDIRECT']=='True')
