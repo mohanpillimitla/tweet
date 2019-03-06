@@ -6,8 +6,6 @@ dj-static==0.0.6
 Django==2.0.5
 django-crispy-forms==1.7.2
 django-heroku==0.3.1
-django-phone-field==1.7.0
-django-verified-email-field==1.5.1
 gunicorn==19.9.0
 heroku==0.1.4
 idna==2.8
