@@ -7,17 +7,7 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  background: #333;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 400;
-  background-image:url("Tweet/images/download.jpeg");
-  background-blend-mode:multiply;
-  background-size:cover;
 
-    
-}
 .content
 {
   display:grid;
