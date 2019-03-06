@@ -37,3 +37,4 @@ urlpatterns = [
     path('profile/',profile,name='profile'),
     path('contact/',contactView,name='contact')
 ]
+urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
