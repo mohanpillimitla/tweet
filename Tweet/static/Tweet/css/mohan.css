@@ -169,11 +169,6 @@ label
 {
   color:blue;
 }
-.eventlist
-{
-  flex-wrap:wrap;
-  
-}
 .invalid-feedback
 {
   color:red;
