@@ -18,17 +18,13 @@
 {
   height:10%;
   width:100%;
-  background-color:grey;
+  background-color:black;
   position:absolute;
   margin-top:20vh;
   top:100%;
   display:grid;
   place-items:center;
   grid-template-columns:auto auto auto;
-}
-.footer:hover
-{
-  background-color:black;
 }
 
 
