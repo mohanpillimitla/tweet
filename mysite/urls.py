@@ -20,6 +20,7 @@ from django.contrib.auth.views import LoginView,LogoutView,PasswordResetView,Pas
 from django.conf import settings
 from django.conf.urls.static import static
 from Tweet.views import contactView,home
+from events.views import eventView
 
 
 
@@ -35,6 +36,7 @@ urlpatterns = [
     path('password_reset_complete/',PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),name='password_reset_complete'),
     path('activate/<uidb64>/<token>/',activate,name='activate'),
     path('profile/',profile,name='profile'),
-    path('contact/',contactView,name='contact')
+    path('contact/',contactView,name='contact'),
+    path('events/',eventView,name='events'),
 ]
 urlpatterns +=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

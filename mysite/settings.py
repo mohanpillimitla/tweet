@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Tweet.apps.TweetConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [
