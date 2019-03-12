@@ -4,11 +4,9 @@
 
 </style>
 
-<div>
+<div class='content-section'>
           <h3 class="account-heading">username:{{ user.username }}</h3>
           <p class="text-secondary">email:{{ user.email }}</p>
-        </div>
-      <div class="content-section">
       <form method="POST" enctype="multipart/form-data" style="text-color:black" >
           {% csrf_token %}
 
@@ -18,15 +16,15 @@
 
               {{ e_form|crispy }}
               {{ p_form|crispy }}
+            </div>
               <div style="display:grid;grid-template-columns:auto auto auto">
                {{ u_form|crispy }}
              </div>
             <p> check the events u are intrested in</p>
 
-          </div>
               <button class="btn btn-outline-info" type="submit">update</button>
       </form>
-      
+      </div>
 
 
 
