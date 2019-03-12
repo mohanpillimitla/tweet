@@ -3,7 +3,9 @@ from .forms import TweetCreateForm
 from .models import UserTweet
 from django.contrib.auth.decorators import login_required
 def home(request):
-	return render(request,'Tweet/home.html',{})
+	queryset=UserTweet.objects.all()
+	context={'object_list':queryset}
+	return render(request,'Tweet/home.html',context)
 
 
 def contactView(request):
