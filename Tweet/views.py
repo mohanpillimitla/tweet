@@ -41,7 +41,7 @@ def deleteView(request,id):
 	if request.method=='POST' and request.user==obj.author:
 		obj.delete()
 		messages.success(request,f'post deleted successfully')
-		return redirect('home') 
+		return redirect('home')
 	else:
 		return render(request,'Tweet/deleteform.html',context)
 
