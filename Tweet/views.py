@@ -34,7 +34,7 @@ def detailView(request,id):
 	return render(request,'Tweet/detailview.html',context)
 
 
-
+@login_required
 def deleteView(request,id):
 	obj=get_object_or_404(UserTweet,id=id)
 	context={'object':obj}
@@ -43,24 +43,30 @@ def deleteView(request,id):
 		messages.success(request,f'post deleted successfully')
 		return redirect('home')
 	else:
+		if request.user!=obj.author:
+			messages.error(request,f'you are not allowed to delete this !!!')
+	
 		return render(request,'Tweet/deleteform.html',context)
 
 
-
+@login_required
 def TweetUpdateView(request,id):
 	obj=get_object_or_404(UserTweet,id=id)
 	context={'object':obj}
-	form=TweetUpdateForm(request.POST,instance=obj)
+	form=TweetUpdateForm(request.POST or None,instance=obj)
 	if request.method=='POST' and request.user==obj.author:
-	    form=TweetUpdateForm(request.POST or None,instance=obj)
+	            form=TweetUpdateForm(request.POST or None,instance=obj)
 
-	    if form.is_valid():
-	   	     form.save()
-	   	     return render(request,'Tweet/detailview.html',context)
+	            if form.is_valid():
+	   	          form.save()
+	   	          return render(request,'Tweet/detailview.html',context)
+
+
 	else:
+		if request.user!=obj.author:
+			messages.error(request,f'you are not allowed to edit this !!!')
+	
 		form=TweetUpdateForm(instance=obj)
 		context={'form':form}
 		return render(request,'Tweet/createform.html',context)
-	
-
-
+		
