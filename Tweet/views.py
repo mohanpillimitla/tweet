@@ -1,7 +1,8 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .forms import TweetCreateForm
+from .forms import TweetCreateForm,TweetUpdateForm
 from .models import UserTweet
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 def home(request):
 	queryset=UserTweet.objects.all()
 	context={'object_list':queryset}
@@ -25,3 +26,41 @@ def createForm(request):
 		form=TweetCreateForm()
 	context={'form':form}
 	return render(request,'Tweet/createform.html',context)
+
+
+def detailView(request,id):
+	obj=get_object_or_404(UserTweet,id=id)
+	context={'object':obj}
+	return render(request,'Tweet/detailview.html',context)
+
+
+
+def deleteView(request,id):
+	obj=get_object_or_404(UserTweet,id=id)
+	context={'object':obj}
+	if request.method=='POST' and request.user==obj.author:
+		obj.delete()
+		messages.success(request,f'post deleted successfully')
+		return redirect('home') 
+	else:
+		return render(request,'Tweet/deleteform.html',context)
+
+
+
+def TweetUpdateView(request,id):
+	obj=get_object_or_404(UserTweet,id=id)
+	context={'object':obj}
+	form=TweetUpdateForm(request.POST,instance=obj)
+	if request.method=='POST' and request.user==obj.author:
+	    form=TweetUpdateForm(request.POST or None,instance=obj)
+
+	    if form.is_valid():
+	   	     form.save()
+	   	     return render(request,'Tweet/detailview.html',context)
+	else:
+		form=TweetUpdateForm(instance=obj)
+		context={'form':form}
+		return render(request,'Tweet/createform.html',context)
+	
+
+

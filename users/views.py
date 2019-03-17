@@ -27,9 +27,7 @@ def register(request):
 		    user.refresh_from_db()
 		    p_form=ProfileUpdateForm(request.POST or None,instance=user.profile)
 		    p_form.full_clean()
-		    p_form.save()
-
-		    
+		    p_form.save()		    
 		    current_site=get_current_site(request)
 		    mail_subject='activate ur cynosure account'
 		    uid=urlsafe_base64_encode(force_bytes(user.pk)).decode()
