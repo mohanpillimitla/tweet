@@ -69,4 +69,3 @@ def TweetUpdateView(request,id):
 		form=TweetUpdateForm(instance=obj)
 		context={'form':form}
 		return render(request,'Tweet/createform.html',context)
-		

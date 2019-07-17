@@ -36,5 +36,7 @@ urlpatterns = [
     path('profile/',profile,name='profile'),
     path('events/',eventView,name='events'),
     path('',include('Tweet.urls')),
+    path('api/tweet',include('Tweet.api.urls')),
+
 ]
 urlpatterns +=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
